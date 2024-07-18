@@ -37,9 +37,17 @@ const Nav = () => {
       >
         <div className="max-w-7xl md:mx-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <p className="font-bold text-2xl text-primary">Palazio</p>
-            {/* <img className="h-8" src="/path/to/your/logo.png" alt="Logo" /> */}
+          <div
+            className={`flex-shrink-0 ${
+              scrolled ? "bg-black p-2 rounded-full" : ""
+            }`}
+          >
+            {/* <p className="font-bold text-2xl text-primary">Palazio</p> */}
+            <img
+              className="md:h-20 md:w-auto h-[50px] w-auto"
+              src="./image/logo_palazio.png"
+              alt="Logo"
+            />
           </div>
 
           {/* Desktop Navigation Links */}
@@ -73,7 +81,7 @@ const Nav = () => {
           {/* Mobile Hamburger Menu */}
           <div className="md:hidden">
             <button
-              className="text-white p-2 rounded-full bg-primary hover:bg-primary-dark"
+              className="text-white p-2 rounded-full bg-black hover:bg-primary-dark"
               onClick={() => setIsOpen(!isOpen)}
             >
               <svg
