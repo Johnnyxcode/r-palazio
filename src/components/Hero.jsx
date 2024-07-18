@@ -1,5 +1,3 @@
-// src/components/Hero.js
-
 import React, { useEffect, useRef } from "react";
 import Nav from "./Nav";
 
@@ -8,14 +6,14 @@ const Hero = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6; // Set playback speed (0.5 is half-speed)
+      videoRef.current.playbackRate = 0.6; // Set playback speed (0.6 is adjusted rate)
     }
   }, []);
 
   const text = "DOWN SCROLL DOWN SCROLL DOWN SCROLL ";
 
   return (
-    <div className="relative bg-primary h-screen overflow-hidden">
+    <div className="relative bg-primary h-[780px] md:h-screen overflow-hidden">
       <Nav />
       {/* Background Video */}
       <video
@@ -30,23 +28,22 @@ const Hero = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary via-black/40 to-transparent z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black z-10"></div>
 
       {/* Content */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white">
-        <h1 className="text-5xl font-bold whitespace-nowrap">
+      <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white">
+        <h1 className="text-lg font-bold whitespace-nowrap md:text-5xl">
           Creating Memorable Experiences
         </h1>
-        <p className="mt-4 text-xl text-primary">
-          With our expert planning and meticulous attention to detail, we
-          transform your vision into unforgettable events that leave a lasting
-          impression.
+        <p className="mt-4 mx-10 md:mx-40 text-sm text-[#ffeac6] md:text-2xl">
+          We turn your vision into memorable events with careful planning and
+          attention to detail, leaving a lasting impression.
         </p>
       </div>
 
       {/* Rotating Text */}
       <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="relative w-40 h-40 flex items-center justify-center">
+        <div className="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
           <div className="absolute w-full h-full rounded-full animate-spin-slow">
             <div className="text-circle">
               {text.split("").map((char, index) => (
@@ -55,7 +52,7 @@ const Hero = () => {
                   style={{
                     transform: `rotate(${index * (360 / text.length)}deg)`,
                   }}
-                  className="circle-text"
+                  className="circle-text text-xl md:text-2xl"
                 >
                   {char}
                 </span>
