@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* Rotating Text */}
       <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="relative w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+        <div className="relative w-40 h-40 flex items-center justify-center">
           <div className="absolute w-full h-full rounded-full animate-spin-slow">
             <div className="text-circle">
               {text.split("").map((char, index) => (
@@ -52,7 +52,7 @@ const Hero = () => {
                   style={{
                     transform: `rotate(${index * (360 / text.length)}deg)`,
                   }}
-                  className="circle-text text-xl md:text-2xl"
+                  className="circle-text text-l"
                 >
                   {char}
                 </span>
