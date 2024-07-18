@@ -4,7 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#ffeac6", // Define primary color here
+        primary: "#BE9553", // Existing primary color
+        primary2: "#ffeac6", // Existing primary color
+        secondary: "#DFE0DF", // New color with a name 'secondary'
+        nature: "#007663", // New color with a name 'accent'
+        dark: "#3E2300", // New color with a name 'dark'
       },
     },
   },

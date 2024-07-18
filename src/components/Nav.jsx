@@ -44,7 +44,7 @@ const Nav = () => {
           >
             {/* <p className="font-bold text-2xl text-primary">Palazio</p> */}
             <img
-              className="md:h-20 md:w-auto h-[50px] w-auto"
+              className="md:h-[50px] md:w-auto h-[50px] w-auto"
               src="./image/logo_palazio.png"
               alt="Logo"
             />
@@ -139,25 +139,25 @@ const Nav = () => {
           </button>
           <div className="py-60">
             <button
-              className="text-primary text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
               onClick={() => scrollToSection("home")}
             >
               Home
             </button>
             <button
-              className="text-primary text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
               onClick={() => scrollToSection("portfolio")}
             >
               Portfolio
             </button>
             <button
-              className="text-primary text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
               onClick={() => scrollToSection("why-us")}
             >
               Why Us
             </button>
             <button
-              className="text-primary text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
               onClick={() => scrollToSection("contact")}
             >
               Contact
