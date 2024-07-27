@@ -1,6 +1,7 @@
 // src/components/ContactUs.js
 
 import React from "react";
+import Button from "./Button";
 
 const ContactUs = () => {
   return (
@@ -47,12 +48,9 @@ const ContactUs = () => {
           ></textarea>
         </div>
         <div className="flex items-center justify-center">
-          <button
-            className="px-4 py-2 border-2  border-t-secondary border-r-secondary border-l-secondary  text-white font-bold rounded-full bg-primary hover:bg-dark focus:outline-none"
-            type="button"
-          >
-            Send Message
-          </button>
+          <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
+            Contact Us
+          </Button>
         </div>
       </form>
     </div>

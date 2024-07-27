@@ -68,7 +68,7 @@ const Nav = () => {
               className="ml-4 text-primary font-medium hover:text-gray-300"
               onClick={() => scrollToSection("why-us")}
             >
-              Why Us
+              About Us
             </button>
             <button
               className="ml-4 text-primary font-medium hover:text-gray-300"
