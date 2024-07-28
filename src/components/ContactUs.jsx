@@ -49,7 +49,7 @@ const ContactUs = () => {
         </div>
         <div className="flex items-center justify-center">
           <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
-            Contact Us
+            Send message
           </Button>
         </div>
       </form>

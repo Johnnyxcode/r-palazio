@@ -45,6 +45,11 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist");
+}
+
 /* index.css or App.css */
 
 /* index.css or App.css */

@@ -13,7 +13,10 @@ const Hero = () => {
   const text = "DOWN SCROLL DOWN SCROLL DOWN SCROLL ";
 
   return (
-    <div className="relative bg-primary h-[780px] md:h-screen overflow-hidden">
+    <div
+      className="relative bg-primary h-[780px] md:h-screen overflow-hidden"
+      id="home"
+    >
       <Nav />
       {/* Background Video */}
       <video

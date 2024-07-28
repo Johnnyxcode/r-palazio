@@ -66,9 +66,9 @@ const Nav = () => {
             </button>
             <button
               className="ml-4 text-primary font-medium hover:text-gray-300"
-              onClick={() => scrollToSection("why-us")}
+              onClick={() => scrollToSection("about")}
             >
-              About Us
+              About us
             </button>
             <button
               className="ml-4 text-primary font-medium hover:text-gray-300"
@@ -152,9 +152,9 @@ const Nav = () => {
             </button>
             <button
               className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
-              onClick={() => scrollToSection("why-us")}
+              onClick={() => scrollToSection("about")}
             >
-              Why Us
+              About us
             </button>
             <button
               className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
