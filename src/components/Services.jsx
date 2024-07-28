@@ -51,18 +51,54 @@ function Services() {
         </h2>
 
         {/* <!-- Larger Heading --> */}
-        <h1 className=" mb-4 text-2xl font-medium">Larger Heading</h1>
-        {/* <!-- Paragraphs  */}
+        <h1 className=" mb-4 text-2xl font-medium">Our services</h1>
+        {/* <!-- Paragraphs --> */}
         <p className="mb-2">
-          First paragraph of text goes here. This is where you describe
-          something.
+          We turn your vision into memorable events with careful planning and
+          attention to detail, leaving a lasting impression. Our comprehensive
+          event planning services ensure that every aspect of your event is
+          meticulously organized and executed. We start with understanding your
+          vision and requirements, followed by tailored plans to meet your
+          unique needs and preferences. Efficient budgeting is also part of our
+          service to ensure you get value for money without compromising on
+          quality.
         </p>
         <p className="mb-2">
-          Second paragraph of text goes here. Continue with more details.
+          Celebrate your special day with our comprehensive wedding planning
+          services. We create magical moments that you and your guests will
+          cherish forever. From beautifully decorated venues that match your
+          theme to delicious and diverse menu options, we take care of it all.
+          Our professional photographers and videographers capture every
+          precious moment, while our entertainment and music services ensure
+          your guests are entertained throughout. Personalized invitations and
+          seamless guest handling add a special touch to your celebration.
         </p>
-        <p className="">
-          Third paragraph of text goes here. Provide additional information as
-          needed.
+        <p className="mb-2">
+          Make your birthday unforgettable with our customized birthday party
+          planning services. We create fun and memorable experiences for all
+          ages. Our services include creative themes and vibrant decorations,
+          engaging activities and games for everyone, and delicious cakes and
+          treats. Unique and fun party favors add to the excitement, while our
+          professional photographers and videographers capture the joy and
+          excitement of your special day.
+        </p>
+        <p className="mb-2">
+          Professional event planning for corporate meetings, conferences, and
+          seminars is our forte. We ensure your corporate events are successful
+          and impactful. Convenient and well-equipped venues, high-quality AV
+          solutions for presentations, and delicious and varied food options are
+          just the beginning. Smooth and efficient guest handling and enhancing
+          your brand’s presence with branding and promotional materials ensure a
+          seamless experience for all attendees.
+        </p>
+        <p>
+          Celebrate your engagement with a beautifully planned and executed
+          party. We create a romantic and joyful atmosphere for your special
+          occasion. Our services include elegant and charming venues, gourmet
+          dining experiences, and romantic music and entertainment. Personalized
+          guest invitations and professional photographers and videographers
+          capture the love and joy, ensuring your engagement party is a
+          memorable event.
         </p>
       </div>
     </div>
