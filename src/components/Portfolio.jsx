@@ -108,7 +108,7 @@ const Portfolio = () => {
           <img
             src="./image/assets/palazio6.jpg"
             alt="Second Image"
-            className="absolute rounded z-20 md:h-[380px] h-40 w-40 md:w-60 right-10 -top-[550px] md:top-0 md:right-[80%] transform translate-x-1/2"
+            className="absolute rounded z-20 md:h-[380px] h-40 w-40 md:w-60 right-10 -top-[550px] md:-top-[190px] md:right-[80%] transform translate-x-1/2"
             style={{ transform: `translateY(${scrollY * 0.2}px)` }}
           />
         </div>
