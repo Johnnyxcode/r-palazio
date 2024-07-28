@@ -10,11 +10,11 @@ const Hero = () => {
     }
   }, []);
 
-  const text = "DOWN SCROLL DOWN SCROLL DOWN SCROLL ";
+  // const text = "DOWN SCROLL DOWN SCROLL DOWN SCROLL ";
 
   return (
     <div
-      className="relative bg-primary h-[780px] md:h-screen overflow-hidden"
+      className="relative bg-primary h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
       id="home"
     >
       <Nav />
@@ -35,20 +35,17 @@ const Hero = () => {
 
       {/* Content */}
       <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white">
-        <h1 className="text-lg font-bold whitespace-nowrap md:text-5xl">
+        <h1 className="text-2xl font-extrabold whitespace-nowrap md:text-6xl">
           Creating Memorable Experiences
         </h1>
-        <p className="relative mt-4 mx-10 md:mx-40 text-sm text-primary2 font-bold md:text-2xl">
-          <span className="relative z-10">
-            We turn your vision into memorable events with careful planning and
-            attention to detail, leaving a lasting impression.
-          </span>
-          <span className="absolute inset-x-0 bottom-0 border-b-[60px] border-primary6"></span>
+        <p className="mt-4 mx-10 md:mx-40 text-sm text-white font-bold md:text-2xl">
+          We turn your vision into memorable events with careful planning and
+          attention to detail, leaving a lasting impression.
         </p>
       </div>
 
       {/* Rotating Text */}
-      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
+      {/* <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
         <div className="relative w-40 h-40 flex items-center justify-center">
           <div className="absolute w-full h-full rounded-full animate-spin-slow">
             <div className="text-circle">
@@ -66,7 +63,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

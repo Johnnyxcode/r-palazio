@@ -78,11 +78,11 @@ const AboutUs = () => {
   // Reusable Card component
   const Card = ({ icon, title, text }) => (
     <div className="p-4 bg-transparent rounded">
-      <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary6 rounded-full">
+      <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary2 rounded-full">
         {icon}
       </div>
       <h4 className="relative  mb-2 text-xl font-semibold text-left">
-        <span className="relative text-primary2 z-10">{title}</span>
+        <span className="relative text-primary4 z-10">{title}</span>
         <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary6 z-0"></span>
       </h4>{" "}
       {/* Align text to the left */}
@@ -95,19 +95,19 @@ const AboutUs = () => {
     <div className="px-8 py-12 space-y-8 text-left">
       <div className="content-start">
         <h1 className="relative text-2xl font-bold mb-2" id="about">
-          <span className="relative text-primary2 z-10">About us</span>
-          <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
+          <span className="relative text-4xl text-primary1 z-10">About us</span>
+          <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
         </h1>
 
-        <p className="mt-2 md:mr-[700px] mr-10 text-md md:text-lg text-gray-700">
+        <p className="mt-2 md:mr-[700px] mr-10 mb-8 font-medium md:text-lg text-gray-700">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
           amet sem sed eros semper congue.
         </p>
         <Button
           onClick={handleOpenModal}
-          className="text-white bg-primary2 font-bold hover:bg-primary1"
+          className="text-white w-full md:w-auto bg-primary2 font-bold hover:bg-primary1"
         >
-          Reach out
+          Read more
         </Button>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <ContactUs />
@@ -116,12 +116,12 @@ const AboutUs = () => {
 
       <div className="space-y-8">
         <div>
-          <h1 className="relative text-2xl font-bold mb-2" id="about">
-            <span className="relative text-primary2 z-10">Our values</span>
-            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
+          <h1 className="relative text-4xl font-bold mb-2" id="about">
+            <span className="relative text-primary1 z-10">Our values</span>
+            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
           </h1>
 
-          <hr className="mt-2 border-2 border-primary5" />
+          {/* <hr className="mt-2 border-2 border-primary5" /> */}
         </div>
 
         {values.map((value, index) => (
@@ -143,9 +143,9 @@ const AboutUs = () => {
       </div>
 
       <div className="bg-transparent">
-        <h1 className="relative text-2xl font-bold mb-2" id="about">
-          <span className="relative text-primary2 z-10">Why us.</span>
-          <span className="absolute bottom-1 left-0 w-20 border-b-8 border-primary6 z-0"></span>
+        <h1 className="relative text-4xl font-bold mb-2" id="about">
+          <span className="relative text-primary1 z-10">Why us.</span>
+          <span className="absolute bottom-1 left-0 w-20 border-b-8 border-primary2 z-0"></span>
         </h1>
 
         <p className="mt-2 text-4xl text-gray-900 mb-20">

@@ -3,64 +3,64 @@ import React from "react";
 function Services() {
   return (
     //   <!-- Parent Container -->
-    <div class="flex flex-col mt-32 md:mt-10 mb-20 md:mb-40 lg:flex-row lg:items-center p-4">
+    <div className="flex flex-col mt-32 md:mt-10 mb-20 md:mb-40 lg:flex-row lg:items-center p-4">
       {/* <!-- Left Side --> */}
-      <div class="relative w-full lg:w-1/2 h-64 lg:h-auto mb-4 lg:mb-0">
+      <div className="relative w-full lg:w-1/2 h-64 lg:h-auto mb-4 lg:mb-0">
         {/* <!-- Background Circles --> */}
-        <div class="absolute top-0 left-0  w-full h-full flex justify-center items-center">
+        <div className="absolute top-0 left-0  w-full h-full flex justify-center items-center">
           {/* <!-- Circles --> */}
           {/* <!-- Circle with Border Only --> */}
-          <div class="absolute rounded-full border-2 border-primary3 w-60 h-60 bg-transparent -top-32 -left-14"></div>
-          <div class="absolute rounded-full border-2 border-primary3 w-44 h-44 bg-transparent -top-24 left-28"></div>
-          <div class="absolute rounded-full border-2 border-primary3 w-60 h-60 bg-transparent top-20 -left-14"></div>
-          <div class="absolute rounded-full border-2 border-primary3 w-80 h-80 bg-transparent -top-5 left-12"></div>
+          <div className="absolute rounded-full border-2 border-primary3 w-60 h-60 bg-transparent -top-32 -left-14"></div>
+          <div className="absolute rounded-full border-2 border-primary3 w-44 h-44 bg-transparent -top-24 left-28"></div>
+          <div className="absolute rounded-full border-2 border-primary3 w-60 h-60 bg-transparent top-20 -left-14"></div>
+          <div className="absolute rounded-full border-2 border-primary3 w-80 h-80 bg-transparent -top-5 left-12"></div>
           {/* <!-- Images --> */}
           <img
             src="./image/assets/palazio1.jpg"
-            class="absolute rounded-full w-36 h-36 z-10 -top-20  -left-4  md:-top-20 md:-left-4"
+            className="absolute rounded-full w-36 h-36 z-10 -top-20  -left-4  md:-top-20 md:-left-4"
           />
           <img
             src="./image/assets/palazio2.jpg"
-            class="absolute rounded-full w-36 h-36 z-30 -top-28  left-28  md:-top-28 md:left-28"
+            className="absolute rounded-full w-36 h-36 z-30 -top-28  left-28  md:-top-28 md:left-28"
           />
           <img
             src="./image/assets/palazio3.jpg"
-            class="absolute rounded-full w-36 h-36 z-10 top-10  left-8  md:-top-18 md:left-18"
+            className="absolute rounded-full w-36 h-36 z-10 top-10  left-8  md:-top-18 md:left-18"
           />
           <img
             src="./image/assets/palazio4.jpg"
-            class="absolute rounded-full w-36 h-36 z-20 top-1  left-40  md:-top-15  md:left-34"
+            className="absolute rounded-full w-36 h-36 z-20 top-1  left-40  md:-top-15  md:left-34"
           />
           <img
             src="./image/assets/palazio5.jpg"
-            class="absolute rounded-full w-36 h-36 z-0 top-36  left-38  md:-top-15  md:left-24"
+            className="absolute rounded-full w-36 h-36 z-0 top-36  left-38  md:-top-15  md:left-24"
           />
           <img
             src="./image/assets/palazio6.jpg"
-            class="absolute rounded-full w-36 h-36 top-28  left-56  md:-top-15  md:left-34"
+            className="absolute rounded-full w-36 h-36 top-28  left-56  md:-top-15  md:left-34"
           />
         </div>
       </div>
 
       {/* <!-- Right Side --> */}
-      <div class="w-full mt-28 md:w-1/2 lg:w-1/2 flex flex-col justify-center px-4 lg:px-8">
+      <div className="w-full mt-28 md:w-1/2 lg:w-1/2 flex flex-col justify-center px-4 lg:px-8">
         {/* <!-- Small Heading --> */}
-        <h2 class="relative text-xl text-primary2 font-bold mb-2">
-          <span class="relative z-10">Small Heading</span>
-          <span class="absolute bottom-1 left-0 w-32 border-b-8 border-primary6 z-0"></span>
+        <h2 className="relative text-3xl font-bold text-primary1 mb-2">
+          <span className="relative  z-10">Small Heading</span>
+          <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary2 z-0"></span>
         </h2>
 
         {/* <!-- Larger Heading --> */}
-        <h1 class="text-3xl font-bold mb-4">Larger Heading</h1>
+        <h1 className=" mb-4 text-2xl font-medium">Larger Heading</h1>
         {/* <!-- Paragraphs  */}
-        <p class="mb-2">
+        <p className="mb-2 font-medium">
           First paragraph of text goes here. This is where you describe
           something.
         </p>
-        <p class="mb-2">
+        <p className="mb-2 font-medium">
           Second paragraph of text goes here. Continue with more details.
         </p>
-        <p>
+        <p className="font-medium">
           Third paragraph of text goes here. Provide additional information as
           needed.
         </p>

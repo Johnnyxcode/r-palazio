@@ -35,13 +35,13 @@ const Portfolio = () => {
       >
         {/* Left Section */}
         <div className="flex-1 space-y-6">
-          <h1 className="relative text-2xl text-primary2 font-bold mb-2">
+          <h1 className="relative text-4xl text-primary1 font-bold mb-2">
             <span className="relative z-10">Portfolio.</span>
-            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
+            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
           </h1>
 
-          <h2 className="text-xl font-semibold">Showcase of Our Work</h2>
-          <p className="text-lg mr-5 md:mr-28">
+          <h2 className="text-2xl font-semibold">Showcase of Our Work</h2>
+          <p className="text-lg font-medium mr-5 md:mr-28">
             Our portfolio showcases a diverse range of projects, each reflecting
             our commitment to excellence and innovation. We take pride in
             delivering outstanding results that meet our clients' needs and
@@ -50,25 +50,25 @@ const Portfolio = () => {
           </p>
 
           {/* Numbers Section */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-start">
             <div>
-              <h3 className="text-4xl font-bold">4+</h3>
-              <p className="text-gray-700">Satisfied Customers</p>
+              <h3 className="text-5xl font-bold">4+</h3>
+              <p className="">Satisfied Customers</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold">10+</h3>
-              <p className="text-gray-700">Completed Projects</p>
+              <h3 className="text-5xl font-bold">10+</h3>
+              <p className="">Completed Projects</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold">5+</h3>
-              <p className="text-gray-700">Years of Experience</p>
+              <h3 className="text-5xl font-bold">5+</h3>
+              <p className="">Years of Experience</p>
             </div>
           </div>
 
           <div>
             <Button
               onClick={handleOpenModal}
-              className="text-white bg-primary2 font-bold hover:bg-primary1"
+              className="text-white w-full md:w-auto bg-primary2 font-bold hover:bg-primary1"
             >
               Reach out
             </Button>

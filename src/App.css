@@ -42,13 +42,14 @@
 } */
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Poppins" "Rubik";
+  font-size: medium;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Geist";
   src: url("../fonts/Geist");
-}
+} */
 
 /* index.css or App.css */
 

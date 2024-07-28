@@ -5,7 +5,7 @@ import Button from "./Button";
 const portfolioData = [
   {
     image: "./image/assets/palazio1.jpg",
-    bgColor: "bg-primary1",
+    bgColor: "bg-gray-200",
     event: "Wedding",
     description:
       "Celebrate your special day with our comprehensive wedding planning services.",
@@ -19,7 +19,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio2.jpg",
-    bgColor: "bg-primary2",
+    bgColor: "bg-gray-200",
     event: "Birthday",
     description:
       "Make your birthday unforgettable with our customized birthday party planning.",
@@ -33,7 +33,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio3.jpg",
-    bgColor: "bg-primary3",
+    bgColor: "bg-gray-200",
     event: "Corporate Event",
     description:
       "Professional event planning for corporate meetings, conferences, and seminars.",
@@ -47,7 +47,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio4.jpg",
-    bgColor: "bg-primary4",
+    bgColor: "bg-gray-200",
     event: "Engagement",
     description:
       "Celebrate your engagement with a beautifully planned and executed party.",

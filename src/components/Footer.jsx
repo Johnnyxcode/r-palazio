@@ -17,17 +17,17 @@ const Footer = () => {
         {/* Two columns of three rows each at the top right corner */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="space-y-2">
-            <p className="relative text-primary1 font-bold text-2xl mb-2">
+            <p className="relative text-white font-bold text-3xl mb-2">
               <span className="relative z-10">Information</span>
-              <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary4 z-0"></span>
+              {/* <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span> */}
             </p>
             <p>Portfolio</p>
             <p>Contact</p>
           </div>
           <div className="space-y-2">
-            <p className="relative text-primary1 font-bold text-2xl mb-2">
+            <p className="relative text-white font-bold text-3xl mb-2">
               <span className="relative z-10">Our location</span>
-              <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary4 z-0"></span>
+              {/* <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span> */}
             </p>
             <p>Address</p>
             <p>Address no</p>
