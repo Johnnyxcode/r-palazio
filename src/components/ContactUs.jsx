@@ -5,8 +5,8 @@ import Button from "./Button";
 
 const ContactUs = () => {
   return (
-    <div id="contact" className="flex items-center justify-center min-h- mt-10">
-      <form className="w-full max-w-lg p-8 bg-transparent">
+    <div className="flex items-center justify-center min-h-screen">
+      <form className="w-full max-w-lg p-8 bg-white border rounded-lg shadow-lg">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="name">
             Your Name

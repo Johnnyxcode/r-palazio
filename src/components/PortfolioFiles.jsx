@@ -162,7 +162,7 @@ const PortfolioFiles = () => {
                   ))}
                 </ul>
                 <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
-                  Contact Us
+                  Reach out
                 </Button>
               </div>
             </div>
@@ -207,9 +207,9 @@ const PortfolioFiles = () => {
                   <li key={detailIndex}>{detail}</li>
                 ))}
               </ul>
-              <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
+              {/* <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
                 Contact Us
-              </Button>
+              </Button> */}
             </div>
           </div>
         ))}

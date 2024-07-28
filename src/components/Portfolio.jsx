@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import PortfolioFiles from "./PortfolioFiles";
+import Modal from "./Modal";
+import Button from "./Button";
+import ContactUs from "./ContactUs"; // Ensure to import ContactUs component
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   // Scroll event listener to track scroll position
   useEffect(() => {
@@ -54,18 +61,26 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <button className="mt-4 px-6 py-2 text-white bg-primary hover:bg-dark rounded">
-            Contact Us
-          </button>
+          <div>
+            <Button
+              onClick={handleOpenModal}
+              className="text-white bg-primary hover:bg-dark"
+            >
+              Reach out
+            </Button>
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+              <ContactUs />
+            </Modal>
+          </div>
         </div>
 
         {/* Right Section */}
         <div className="flex-1 relative">
-          <div className="relative md:h-[700px] overflow-hidden ">
+          <div className="relative md:h-[700px] overflow-hidden">
             <img
               src="./image/assets/palazio5.jpg"
               alt="Main Image"
-              className="md:w-full md:h-full object-cover "
+              className="md:w-full md:h-full object-cover"
             />
             <div
               className="absolute inset-0 bg-white opacity-100"
@@ -89,7 +104,7 @@ const Portfolio = () => {
           <img
             src="./image/assets/palazio6.jpg"
             alt="Second Image"
-            className="absolute rounded z-20 md:h-[380px] h-40 w-40 md:w-60 right-10 -top-80 md:opt-0 md:right-[80%] transform translate-x-1/2"
+            className="absolute rounded z-20 md:h-[380px] h-40 w-40 md:w-60 right-10 -top-80 md:top-0 md:right-[80%] transform translate-x-1/2"
             style={{ transform: `translateY(${scrollY * 0.2}px)` }}
           />
         </div>

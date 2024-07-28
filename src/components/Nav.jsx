@@ -1,8 +1,17 @@
+// src/components/Nav.js
+
 import React, { useEffect, useState } from "react";
+import Modal from "./Modal";
+import Button from "./Button";
+import ContactUs from "./ContactUs";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -42,7 +51,6 @@ const Nav = () => {
               scrolled ? "bg-black p-2 rounded-full" : ""
             }`}
           >
-            {/* <p className="font-bold text-2xl text-primary">Palazio</p> */}
             <img
               className="md:h-[50px] md:w-auto h-[50px] w-auto"
               src="./image/logo_palazio.png"
@@ -70,12 +78,12 @@ const Nav = () => {
             >
               About us
             </button>
-            <button
-              className="ml-4 text-primary font-medium hover:text-gray-300"
-              onClick={() => scrollToSection("contact")}
+            <Button
+              onClick={handleOpenModal}
+              className="ml-4 text-white border-0 bg-primary hover:bg-dark"
             >
-              Contact
-            </button>
+              Contact Us
+            </Button>
           </div>
 
           {/* Mobile Hamburger Menu */}
@@ -157,14 +165,22 @@ const Nav = () => {
               About us
             </button>
             <button
-              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
-              onClick={() => scrollToSection("contact")}
+              className="text-primary2 text-3xl font-bold  hover:text-gray-300 block mb-4"
+              onClick={() => {
+                handleOpenModal();
+                setIsOpen(false);
+              }}
             >
               Contact
             </button>
           </div>
         </div>
       </div>
+
+      {/* Modal for ContactUs */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <ContactUs />
+      </Modal>
     </>
   );
 };
