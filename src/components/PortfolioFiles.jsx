@@ -197,9 +197,9 @@ const PortfolioFiles = () => {
           <div key={index} className="p-4 rounded-lg bg-white">
             <div className="flex items-center space-x-4">
               <FaCalendarAlt className="text-2xl" />
-              <h2 className="relative text-primary2 text-xl font-bold mb-2">
+              <h2 className="relative text-primary1 text-xl font-bold mb-2">
                 <span className="relative z-10">{item.event}</span>
-                <span className="absolute bottom-1 left-0 w-28  border-b-8 border-primary6 z-0"></span>
+                <span className="absolute bottom-1 left-0 w-28  border-b-8 border-primary2 z-0"></span>
               </h2>
             </div>
             <p className="mt-4">{item.description}</p>

@@ -53,14 +53,14 @@ function Services() {
         {/* <!-- Larger Heading --> */}
         <h1 className=" mb-4 text-2xl font-medium">Larger Heading</h1>
         {/* <!-- Paragraphs  */}
-        <p className="mb-2 font-medium">
+        <p className="mb-2">
           First paragraph of text goes here. This is where you describe
           something.
         </p>
-        <p className="mb-2 font-medium">
+        <p className="mb-2">
           Second paragraph of text goes here. Continue with more details.
         </p>
-        <p className="font-medium">
+        <p className="">
           Third paragraph of text goes here. Provide additional information as
           needed.
         </p>

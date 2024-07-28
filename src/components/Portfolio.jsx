@@ -41,7 +41,7 @@ const Portfolio = () => {
           </h1>
 
           <h2 className="text-2xl font-semibold">Showcase of Our Work</h2>
-          <p className="text-lg font-medium mr-5 md:mr-28">
+          <p className=" mr-5 md:mr-28">
             Our portfolio showcases a diverse range of projects, each reflecting
             our commitment to excellence and innovation. We take pride in
             delivering outstanding results that meet our clients' needs and

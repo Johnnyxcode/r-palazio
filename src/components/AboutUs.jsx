@@ -81,9 +81,9 @@ const AboutUs = () => {
       <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary2 rounded-full">
         {icon}
       </div>
-      <h4 className="relative  mb-2 text-xl font-semibold text-left">
-        <span className="relative text-primary4 z-10">{title}</span>
-        <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary6 z-0"></span>
+      <h4 className="relative  mb-2 text-2xl font-semibold text-left">
+        <span className="relative text-primary3 z-10">{title}</span>
+        <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary4 z-0"></span>
       </h4>{" "}
       {/* Align text to the left */}
       <p className="text-left text-gray-700">{text}</p>{" "}
@@ -126,7 +126,7 @@ const AboutUs = () => {
 
         {values.map((value, index) => (
           <div key={index}>
-            <h3 className="text-xl text-primary4 underline font-semibold">
+            <h3 className="text-2xl text-primary3 underline font-medium">
               {value.title}
             </h3>
             <div className="flex py-10 justify-between mt-1 text-gray-800">
@@ -136,7 +136,7 @@ const AboutUs = () => {
               </span>
             </div>
             {index < values.length - 1 && (
-              <hr className="mt-4 border-2 border-primary5" />
+              <hr className="mt-4 border-2 border-primary4" />
             )}
           </div>
         ))}
@@ -148,7 +148,7 @@ const AboutUs = () => {
           <span className="absolute bottom-1 left-0 w-20 border-b-8 border-primary2 z-0"></span>
         </h1>
 
-        <p className="mt-2 text-4xl text-gray-900 mb-20">
+        <p className="mt-2 text-4xl font-medium text-gray-900 mb-20">
           6 reason to work with us
         </p>
 

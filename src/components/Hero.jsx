@@ -10,7 +10,7 @@ const Hero = () => {
     }
   }, []);
 
-  // const text = "DOWN SCROLL DOWN SCROLL DOWN SCROLL ";
+  const text = "PALAZIO PALAZIO PALAZIO PALAZIO PALAZIO ";
 
   return (
     <div
@@ -45,7 +45,7 @@ const Hero = () => {
       </div>
 
       {/* Rotating Text */}
-      {/* <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
         <div className="relative w-40 h-40 flex items-center justify-center">
           <div className="absolute w-full h-full rounded-full animate-spin-slow">
             <div className="text-circle">
@@ -63,7 +63,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
