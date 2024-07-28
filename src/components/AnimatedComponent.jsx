@@ -34,7 +34,7 @@ const AnimatedComponent = () => {
   }, []);
 
   return (
-    <div className="relative rounded-t-2xl w-full h-[500px] mb-10 bg-gradient-to-t from-transparent to-blue-500 flex items-end justify-center overflow-hidden">
+    <div className="relative rounded-t-2xl w-full h-[500px] mb-10 bg-gradient-to-t from-transparent to-primary2 flex items-end justify-center overflow-hidden">
       <img
         src="./image/assets/building.png" // replace with your image path
         alt="Event"
