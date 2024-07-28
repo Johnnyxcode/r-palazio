@@ -9,3 +9,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.text-animation-left {
+  @apply absolute whitespace-nowrap overflow-hidden text-2xl text-white w-full;
+  animation: scrollLeft 10s linear infinite;
+  top: 10%;
+}
+
+.text-animation-right {
+  @apply absolute whitespace-nowrap overflow-hidden text-2xl text-white w-full;
+  animation: scrollRight 10s linear infinite;
+  bottom: 10%;
+}

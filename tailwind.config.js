@@ -11,6 +11,20 @@ export default {
         primary5: "#FBBE53", // New color with a name 'dark'
         primary6: "#F9F871", // New color with a name 'accent'
       },
+      keyframes: {
+        scrollLeft: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        scrollRight: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        scrollLeft: "scrollLeft 10s linear infinite",
+        scrollRight: "scrollRight 10s linear infinite",
+      },
     },
   },
   plugins: [

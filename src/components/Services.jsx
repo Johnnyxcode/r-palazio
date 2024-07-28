@@ -45,13 +45,13 @@ function Services() {
       {/* <!-- Right Side --> */}
       <div className="w-full mt-28 md:w-1/2 lg:w-1/2 flex flex-col justify-center px-4 lg:px-8">
         {/* <!-- Small Heading --> */}
-        <h2 className="relative text-3xl font-bold text-primary1 mb-2">
-          <span className="relative  z-10">Small Heading</span>
+        <h2 className="relative text-4xl font-bold text-primary1 mb-4">
+          <span className="relative  z-10">Our services</span>
           <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary2 z-0"></span>
         </h2>
 
         {/* <!-- Larger Heading --> */}
-        <h1 className=" mb-4 text-2xl font-medium">Our services</h1>
+        {/* <h1 className=" mb-4 text-2xl font-medium">Our services</h1> */}
         {/* <!-- Paragraphs --> */}
         <p className="mb-2">
           We turn your vision into memorable events with careful planning and

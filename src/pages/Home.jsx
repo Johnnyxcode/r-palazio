@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
 import AboutUs from "../components/AboutUs";
+import AnimatedComponent from "../components/AnimatedComponent";
 // import PortfolioFiles from "../components/PortfolioFiles";
 
 function Home() {
@@ -18,6 +19,8 @@ function Home() {
       {/* <PortfolioFiles /> */}
       <AboutUs />
       {/* <ContactUs /> */}
+      <AnimatedComponent />
+
       <Footer />
     </div>
   );
