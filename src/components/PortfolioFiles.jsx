@@ -144,7 +144,7 @@ const PortfolioFiles = () => {
               <img
                 src={item.image}
                 alt={`Image for ${item.event}`}
-                className="object-contain w-80 h-80"
+                className="object-contain w-80 h-80 shadow-lg rounded-3xl"
               />
             </div>
             {/* Content Section */}
@@ -183,7 +183,7 @@ const PortfolioFiles = () => {
         <img
           src={portfolioData[activeIndex].image}
           alt={`Image for ${portfolioData[activeIndex].event}`}
-          className="object-contain w-80 h-80 pointer-events-auto shadow-lg transition-all duration-300"
+          className="object-contain w-80 h-80 pointer-events-auto shadow-lg rounded-3xl transition-all duration-300"
         />
       </div>
 
@@ -199,7 +199,7 @@ const PortfolioFiles = () => {
               <FaCalendarAlt className="text-2xl" />
               <h2 className="relative text-primary1 text-xl font-bold mb-2">
                 <span className="relative z-10">{item.event}</span>
-                <span className="absolute bottom-1 left-0 w-28  border-b-8 border-primary2 z-0"></span>
+                <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
               </h2>
             </div>
             <p className="mt-4">{item.description}</p>

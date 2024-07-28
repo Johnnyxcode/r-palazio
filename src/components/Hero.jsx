@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <div
-      className="relative bg-primary h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
+      className="relative bg-primary2 h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
       id="home"
     >
       <Nav />
