@@ -38,9 +38,12 @@ const Hero = () => {
         <h1 className="text-lg font-bold whitespace-nowrap md:text-5xl">
           Creating Memorable Experiences
         </h1>
-        <p className="mt-4 mx-10 md:mx-40 text-sm text-[#ffeac6] md:text-2xl">
-          We turn your vision into memorable events with careful planning and
-          attention to detail, leaving a lasting impression.
+        <p className="relative mt-4 mx-10 md:mx-40 text-sm text-primary2 font-bold md:text-2xl">
+          <span className="relative z-10">
+            We turn your vision into memorable events with careful planning and
+            attention to detail, leaving a lasting impression.
+          </span>
+          <span className="absolute inset-x-0 bottom-0 border-b-[60px] border-primary6"></span>
         </p>
       </div>
 

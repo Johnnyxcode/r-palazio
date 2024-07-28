@@ -35,9 +35,13 @@ const Portfolio = () => {
       >
         {/* Left Section */}
         <div className="flex-1 space-y-6">
-          <h1 className="text-2xl font-bold">Portfolio.</h1>
+          <h1 className="relative text-2xl text-primary2 font-bold mb-2">
+            <span className="relative z-10">Portfolio.</span>
+            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
+          </h1>
+
           <h2 className="text-xl font-semibold">Showcase of Our Work</h2>
-          <p className="text-lg text-gray-700 mr-5 md:mr-28">
+          <p className="text-lg mr-5 md:mr-28">
             Our portfolio showcases a diverse range of projects, each reflecting
             our commitment to excellence and innovation. We take pride in
             delivering outstanding results that meet our clients' needs and
@@ -64,7 +68,7 @@ const Portfolio = () => {
           <div>
             <Button
               onClick={handleOpenModal}
-              className="text-white bg-primary hover:bg-dark"
+              className="text-white bg-primary2 font-bold hover:bg-primary1"
             >
               Reach out
             </Button>

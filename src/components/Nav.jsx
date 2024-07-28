@@ -1,5 +1,3 @@
-// src/components/Nav.js
-
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import Button from "./Button";
@@ -41,14 +39,14 @@ const Nav = () => {
     <>
       <nav
         className={`fixed w-full py-4 z-40 transition duration-300 ${
-          scrolled ? "bg-white" : "bg-transparent"
+          scrolled ? "bg-white text-primary2" : "bg-transparent text-white"
         }`}
       >
         <div className="max-w-7xl md:mx-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <div
             className={`flex-shrink-0 ${
-              scrolled ? "bg-black p-2 rounded-full" : ""
+              scrolled ? "bg-primary2 p-2 h-[70px] w-auto rounded-full" : ""
             }`}
           >
             <img
@@ -61,39 +59,47 @@ const Nav = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex">
             <button
-              className="ml-4 text-primary font-medium hover:text-gray-300"
+              className={`ml-4 font-bold hover:text-primary5 ${
+                scrolled ? "text-primary2" : "text-white"
+              }`}
               onClick={() => scrollToSection("home")}
             >
               Home
             </button>
             <button
-              className="ml-4 text-primary font-medium hover:text-gray-300"
+              className={`ml-4 font-bold hover:text-primary5 ${
+                scrolled ? "text-primary2" : "text-white"
+              }`}
               onClick={() => scrollToSection("portfolio")}
             >
               Portfolio
             </button>
             <button
-              className="ml-4 text-primary font-medium hover:text-gray-300"
+              className={`ml-4 font-bold hover:text-primary5 ${
+                scrolled ? "text-primary2" : "text-white"
+              }`}
               onClick={() => scrollToSection("about")}
             >
               About us
             </button>
             <Button
               onClick={handleOpenModal}
-              className="ml-4 text-white border-0 bg-primary hover:bg-dark"
+              className={`ml-4 border-0 bg-primary2 hover:text-primary5 hover:bg-primary1 ${
+                scrolled ? "text-white" : "text-white"
+              }`}
             >
-              Contact Us
+              Contact us
             </Button>
           </div>
 
           {/* Mobile Hamburger Menu */}
           <div className="md:hidden">
             <button
-              className="text-white p-2 rounded-full bg-black hover:bg-primary-dark"
+              className="p-2 rounded-full bg-primary2 hover:bg-primary1"
               onClick={() => setIsOpen(!isOpen)}
             >
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -147,25 +153,25 @@ const Nav = () => {
           </button>
           <div className="py-60">
             <button
-              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
               onClick={() => scrollToSection("home")}
             >
               Home
             </button>
             <button
-              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
               onClick={() => scrollToSection("portfolio")}
             >
               Portfolio
             </button>
             <button
-              className="text-primary2 text-3xl font-bold hover:text-gray-300 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
               onClick={() => scrollToSection("about")}
             >
               About us
             </button>
             <button
-              className="text-primary2 text-3xl font-bold  hover:text-gray-300 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
               onClick={() => {
                 handleOpenModal();
                 setIsOpen(false);

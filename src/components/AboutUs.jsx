@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaSearch,
   FaRocket,
@@ -7,9 +7,16 @@ import {
   FaWrench,
   FaChartLine,
 } from "react-icons/fa";
+import Modal from "./Modal";
 import Button from "./Button";
+import ContactUs from "./ContactUs";
 
 const AboutUs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); // Initialize state for modal
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   // Data for values
   const values = [
     {
@@ -71,10 +78,13 @@ const AboutUs = () => {
   // Reusable Card component
   const Card = ({ icon, title, text }) => (
     <div className="p-4 bg-transparent rounded">
-      <div className="flex items-center justify-center w-12 h-12 mb-4 bg-gray-300 rounded-full">
+      <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary6 rounded-full">
         {icon}
       </div>
-      <h4 className="mb-2 text-xl font-semibold text-left">{title}</h4>{" "}
+      <h4 className="relative  mb-2 text-xl font-semibold text-left">
+        <span className="relative text-primary2 z-10">{title}</span>
+        <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary6 z-0"></span>
+      </h4>{" "}
       {/* Align text to the left */}
       <p className="text-left text-gray-700">{text}</p>{" "}
       {/* Align text to the left */}
@@ -84,42 +94,59 @@ const AboutUs = () => {
   return (
     <div className="px-8 py-12 space-y-8 text-left">
       <div className="content-start">
-        <h1 className="text-2xl font-bold" id="about">
-          About Us
+        <h1 className="relative text-2xl font-bold mb-2" id="about">
+          <span className="relative text-primary2 z-10">About us</span>
+          <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
         </h1>
+
         <p className="mt-2 md:mr-[700px] mr-10 text-md md:text-lg text-gray-700">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
           amet sem sed eros semper congue.
         </p>
-        <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
-          Contact Us
+        <Button
+          onClick={handleOpenModal}
+          className="text-white bg-primary2 font-bold hover:bg-primary1"
+        >
+          Reach out
         </Button>
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          <ContactUs />
+        </Modal>
       </div>
 
       <div className="space-y-8">
         <div>
-          <h2 className="text-2xl font-bold">Our Values</h2>
-          <hr className="mt-2 border-gray-800" />
+          <h1 className="relative text-2xl font-bold mb-2" id="about">
+            <span className="relative text-primary2 z-10">Our values</span>
+            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary6 z-0"></span>
+          </h1>
+
+          <hr className="mt-2 border-2 border-primary5" />
         </div>
 
         {values.map((value, index) => (
           <div key={index}>
-            <h3 className="text-xl underline font-semibold">{value.title}</h3>
+            <h3 className="text-xl text-primary4 underline font-semibold">
+              {value.title}
+            </h3>
             <div className="flex py-10 justify-between mt-1 text-gray-800">
-              <p className="md:mr-[25%] mr-10">{value.text}</p>
-              <span className="text-gray-800 md:font-bold py-28 md:py-0 text-4xl md:text-7xl">
+              <p className="md:mr-[25%]  mr-10">{value.text}</p>
+              <span className="text-primary2 md:font-bold py-28 md:py-0 text-4xl md:text-7xl">
                 {value.figure}
               </span>
             </div>
             {index < values.length - 1 && (
-              <hr className="mt-4 border-gray-800" />
+              <hr className="mt-4 border-2 border-primary5" />
             )}
           </div>
         ))}
       </div>
 
       <div className="bg-transparent">
-        <h2 className="text-2xl font-bold mb-5">Why us.</h2>
+        <h1 className="relative text-2xl font-bold mb-2" id="about">
+          <span className="relative text-primary2 z-10">Why us.</span>
+          <span className="absolute bottom-1 left-0 w-20 border-b-8 border-primary6 z-0"></span>
+        </h1>
 
         <p className="mt-2 text-4xl text-gray-900 mb-20">
           6 reason to work with us

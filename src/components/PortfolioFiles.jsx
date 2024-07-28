@@ -5,7 +5,7 @@ import Button from "./Button";
 const portfolioData = [
   {
     image: "./image/assets/palazio1.jpg",
-    bgColor: "bg-blue-500",
+    bgColor: "bg-primary1",
     event: "Wedding",
     description:
       "Celebrate your special day with our comprehensive wedding planning services.",
@@ -19,7 +19,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio2.jpg",
-    bgColor: "bg-green-500",
+    bgColor: "bg-primary2",
     event: "Birthday",
     description:
       "Make your birthday unforgettable with our customized birthday party planning.",
@@ -33,7 +33,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio3.jpg",
-    bgColor: "bg-red-500",
+    bgColor: "bg-primary3",
     event: "Corporate Event",
     description:
       "Professional event planning for corporate meetings, conferences, and seminars.",
@@ -47,7 +47,7 @@ const portfolioData = [
   },
   {
     image: "./image/assets/palazio4.jpg",
-    bgColor: "bg-purple-500",
+    bgColor: "bg-primary4",
     event: "Engagement",
     description:
       "Celebrate your engagement with a beautifully planned and executed party.",
@@ -197,7 +197,10 @@ const PortfolioFiles = () => {
           <div key={index} className="p-4 rounded-lg bg-white">
             <div className="flex items-center space-x-4">
               <FaCalendarAlt className="text-2xl" />
-              <h2 className="text-xl font-bold">{item.event}</h2>
+              <h2 className="relative text-primary2 text-xl font-bold mb-2">
+                <span className="relative z-10">{item.event}</span>
+                <span className="absolute bottom-1 left-0 w-28  border-b-8 border-primary6 z-0"></span>
+              </h2>
             </div>
             <p className="mt-4">{item.description}</p>
             <div className="mt-4 p-4 shadow-lg rounded-lg">
