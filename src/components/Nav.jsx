@@ -39,7 +39,7 @@ const Nav = () => {
     <>
       <nav
         className={`fixed w-full py-4 z-40 transition duration-300 ${
-          scrolled ? "bg-white text-primary2" : "bg-transparent text-white"
+          scrolled ? "bg-white text-black" : "bg-transparent text-white"
         }`}
       >
         <div className="max-w-7xl md:mx-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -59,24 +59,24 @@ const Nav = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex">
             <button
-              className={`ml-4 font-bold hover:text-primary5 ${
-                scrolled ? "text-primary2" : "text-white"
+              className={`ml-4 font-bold hover:text-primary2 ${
+                scrolled ? "text-black" : "text-white"
               }`}
               onClick={() => scrollToSection("home")}
             >
               Home
             </button>
             <button
-              className={`ml-4 font-bold hover:text-primary5 ${
-                scrolled ? "text-primary2" : "text-white"
+              className={`ml-4 font-bold hover:text-primary2 ${
+                scrolled ? "text-black" : "text-white"
               }`}
               onClick={() => scrollToSection("portfolio")}
             >
               Portfolio
             </button>
             <button
-              className={`ml-4 font-bold hover:text-primary5 ${
-                scrolled ? "text-primary2" : "text-white"
+              className={`ml-4 font-bold hover:text-primary2 ${
+                scrolled ? "text-black" : "text-white"
               }`}
               onClick={() => scrollToSection("about")}
             >
@@ -84,7 +84,7 @@ const Nav = () => {
             </button>
             <Button
               onClick={handleOpenModal}
-              className={`ml-4 border-0 bg-primary2 hover:text-primary5 hover:bg-primary1 ${
+              className={`ml-4 border-0 bg-primary2 font-bold hover:text-black hover:bg-primary1 ${
                 scrolled ? "text-white" : "text-white"
               }`}
             >
@@ -127,7 +127,7 @@ const Nav = () => {
         onClick={() => setIsOpen(false)}
       ></div>
       <div
-        className={`fixed inset-y-0 right-0 w-64 bg-black shadow-lg transform transition-transform ${
+        className={`fixed inset-y-0 right-0 w-64 bg-primary2 shadow-lg transform transition-transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } z-50`}
       >
@@ -153,25 +153,25 @@ const Nav = () => {
           </button>
           <div className="py-60">
             <button
-              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary1 block mb-4"
               onClick={() => scrollToSection("home")}
             >
               Home
             </button>
             <button
-              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary1 block mb-4"
               onClick={() => scrollToSection("portfolio")}
             >
               Portfolio
             </button>
             <button
-              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary1 block mb-4"
               onClick={() => scrollToSection("about")}
             >
               About us
             </button>
             <button
-              className="text-white text-3xl font-bold hover:text-primary5 block mb-4"
+              className="text-white text-3xl font-bold hover:text-primary1 block mb-4"
               onClick={() => {
                 handleOpenModal();
                 setIsOpen(false);

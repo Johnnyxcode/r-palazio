@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import PreLoader from "./components/PreLoader";
+// Import the Preloader component
 
 function App() {
   const [loading, setLoading] = useState(true);
