@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 import Home from "./pages/Home";
-import PreLoader from "./components/PreLoader";
-// Import the Preloader component
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    // Simulate a loading delay
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Adjust the delay as needed
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return <>{loading ? <PreLoader /> : <Home />}</>;
+  return (
+    <>
+      <div>
+        <Home />
+      </div>
+    </>
+  );
 }
 
 export default App;

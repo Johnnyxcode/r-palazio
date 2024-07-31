@@ -104,7 +104,7 @@ const AboutUs = () => {
   ];
 
   const Card = ({ icon, title, text }) => (
-    <div className="p-4 bg-transparent rounded">
+    <div className="p-4 bg-transparent rounded" id="about">
       <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary2 rounded-full">
         {icon}
       </div>

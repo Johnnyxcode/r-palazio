@@ -10,7 +10,7 @@ const Hero = () => {
     }
   }, []);
 
-  // const text = "PALAZIO PALAZIO PALAZIO PALAZIO PALAZIO ";
+  const text = "PALAZIO PALAZIO PALAZIO PALAZIO PALAZIO ";
 
   return (
     <div
@@ -45,27 +45,25 @@ const Hero = () => {
       </div>
 
       {/* Rotating Text */}
-      {/* <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
         <div className="relative w-40 h-40 flex items-center justify-center">
-          <div className="text-circle font-bold text-white">
-            {text.split("").map((char, index) => (
-              <span
-                key={index}
-                style={{
-                  transform: `rotate(${index * (360 / text.length)}deg)`,
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transformOrigin: "0 0",
-                }}
-                className="circle-text text-l"
-              >
-                {char}
-              </span>
-            ))}
+          <div className="absolute w-full h-full rounded-full animate-spin-slow">
+            <div className="text-circle">
+              {text.split("").map((char, index) => (
+                <span
+                  key={index}
+                  style={{
+                    transform: `rotate(${index * (360 / text.length)}deg)`,
+                  }}
+                  className="circle-text text-l"
+                >
+                  {char}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
