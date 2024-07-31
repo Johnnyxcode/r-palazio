@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaSearch,
   FaRocket,
@@ -12,12 +12,41 @@ import Button from "./Button";
 import ContactUs from "./ContactUs";
 
 const AboutUs = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Initialize state for modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [textWidths, setTextWidths] = useState({});
+  const sectionRef = useRef(null);
+  const textRefs = {
+    aboutUs: useRef(null),
+    ourValues: useRef(null),
+    whyUs: useRef(null),
+    cards: Array(6)
+      .fill(0)
+      .map(() => useRef(null)),
+  };
+
+  useEffect(() => {
+    const measureTextWidths = () => {
+      const widths = {};
+      Object.keys(textRefs).forEach((key) => {
+        if (key === "cards") {
+          widths[key] = textRefs[key].map((ref) =>
+            ref.current ? ref.current.offsetWidth : 0
+          );
+        } else if (textRefs[key].current) {
+          widths[key] = textRefs[key].current.offsetWidth;
+        }
+      });
+      setTextWidths(widths);
+    };
+
+    measureTextWidths();
+    window.addEventListener("resize", measureTextWidths);
+    return () => window.removeEventListener("resize", measureTextWidths);
+  }, []);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  // Data for values
   const values = [
     {
       title: "Professionalism.",
@@ -41,7 +70,6 @@ const AboutUs = () => {
     },
   ];
 
-  // Data for cards
   const cards = [
     {
       icon: <FaSearch />,
@@ -75,33 +103,41 @@ const AboutUs = () => {
     },
   ];
 
-  // Reusable Card component
   const Card = ({ icon, title, text }) => (
     <div className="p-4 bg-transparent rounded">
       <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary2 rounded-full">
         {icon}
       </div>
-      <h4 className="relative  mb-2 text-2xl font-semibold text-left">
-        <span className="relative text-primary3 z-10">{title}</span>
-        <span className="absolute bottom-1 left-0 w-32 border-b-8 border-primary4 z-0"></span>
-      </h4>{" "}
-      {/* Align text to the left */}
-      <p className="text-left text-gray-700">{text}</p>{" "}
-      {/* Align text to the left */}
+      <h4 className="relative mb-2 text-2xl font-semibold text-left">
+        <span className="relative underline text-black font-bold z-10">
+          {title}
+        </span>
+      </h4>
+      <p className="text-left text-gray-700">{text}</p>
     </div>
   );
 
   return (
-    <div className="px-8 py-12 space-y-8 text-left">
+    <div className="px-8 py-12 space-y-8 text-left" ref={sectionRef}>
       <div className="content-start">
-        <h1 className="relative text-2xl font-bold mb-2" id="about">
-          <span className="relative text-4xl text-primary1 z-10">About us</span>
-          <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
+        <h1 className="relative text-2xl font-bold mb-2">
+          <span
+            className="relative text-4xl text-black z-10"
+            ref={textRefs.aboutUs}
+          >
+            About us
+          </span>
+          <span
+            className="absolute bottom-0 left-0 border-b-[26px] border-primary2 z-0"
+            style={{
+              width: `${textWidths.aboutUs || 0}px`,
+              transition: "width 0.8s ease-in-out",
+            }}
+          ></span>
         </h1>
 
-        <p className="mt-2 md:mr-[700px] mr-10 mb-8 font-medium md:text-lg text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
-          amet sem sed eros semper congue.
+        <p className="mt-2 mb-8 font-medium text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
         <Button
           onClick={handleOpenModal}
@@ -116,51 +152,66 @@ const AboutUs = () => {
 
       <div className="space-y-8">
         <div>
-          <h1 className="relative text-4xl font-bold mb-2" id="about">
-            <span className="relative text-primary1 z-10">Our values</span>
-            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
+          <h1 className="relative text-4xl font-bold mb-2">
+            <span className="relative text-black z-10" ref={textRefs.ourValues}>
+              Our values
+            </span>
+            <span
+              className="absolute bottom-0 left-0 border-b-[26px] border-primary2 z-0"
+              style={{
+                width: `${textWidths.ourValues || 0}px`,
+                transition: "width 0.8s ease-in-out",
+              }}
+            ></span>
           </h1>
 
-          {/* <hr className="mt-2 border-2 border-primary5" /> */}
+          {values.map((value, index) => (
+            <div key={index}>
+              <h3 className="text-2xl text-black font-bold mt-10 underline">
+                {value.title}
+              </h3>
+              <div className="flex">
+                <div className="flex py-10 justify-between mt-5 mr-5 md:mr-32 text-gray-800">
+                  <p>{value.text}</p>
+                </div>
+                <div>
+                  <span className="text-primary2 font-bold md:text-8xl">
+                    {value.figure}
+                  </span>
+                </div>
+              </div>
+              {index < values.length - 1 && (
+                <hr className="mt-4 border-2 border-primary2" />
+              )}
+            </div>
+          ))}
         </div>
 
-        {values.map((value, index) => (
-          <div key={index}>
-            <h3 className="text-2xl text-primary3 underline font-medium">
-              {value.title}
-            </h3>
-            <div className="flex py-10 justify-between mt-1 text-gray-800">
-              <p className="md:mr-[25%]  mr-10">{value.text}</p>
-              <span className="text-primary2 md:font-bold py-28 md:py-0 text-4xl md:text-7xl">
-                {value.figure}
-              </span>
-            </div>
-            {index < values.length - 1 && (
-              <hr className="mt-4 border-2 border-primary4" />
-            )}
+        <div>
+          <h1 className="relative text-4xl font-bold mb-2">
+            <span className="relative text-black z-10" ref={textRefs.whyUs}>
+              Why us
+            </span>
+            <span
+              className="absolute bottom-0 left-0 border-b-[26px] border-primary2 z-0"
+              style={{
+                width: `${textWidths.whyUs || 0}px`,
+                transition: "width 0.8s ease-in-out",
+              }}
+            ></span>
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                icon={card.icon}
+                title={card.title}
+                text={card.text}
+                ref={textRefs.cards[index]}
+              />
+            ))}
           </div>
-        ))}
-      </div>
-
-      <div className="bg-transparent">
-        <h1 className="relative text-4xl font-bold mb-2" id="about">
-          <span className="relative text-primary1 z-10">Why us.</span>
-          <span className="absolute bottom-1 left-0 w-20 border-b-8 border-primary2 z-0"></span>
-        </h1>
-
-        <p className="mt-2 text-4xl font-medium text-gray-900 mb-20">
-          6 reason to work with us
-        </p>
-
-        <div className="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 md:grid-cols-3 bg-transparent">
-          {cards.map((card, index) => (
-            <Card
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              text={card.text}
-            />
-          ))}
         </div>
       </div>
     </div>

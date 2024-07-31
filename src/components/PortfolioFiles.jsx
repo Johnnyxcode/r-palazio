@@ -90,6 +90,7 @@ const PortfolioFiles = () => {
   const rightSectionRef = useRef(null);
   const leftSectionRef = useRef(null);
   const windowSize = useWindowSize();
+  const eventRefs = useRef([]);
 
   const handleScroll = () => {
     const scrollTop = rightSectionRef.current.scrollTop;
@@ -132,6 +133,26 @@ const PortfolioFiles = () => {
     }
   }, [windowSize.width]);
 
+  useEffect(() => {
+    eventRefs.current = eventRefs.current.slice(0, portfolioData.length);
+  }, [portfolioData.length]);
+
+  const EventTitle = ({ event, index }) => (
+    <h2
+      className="relative text-black text-xl md:text-3xl font-bold mb-2"
+      ref={(el) => (eventRefs.current[index] = el)}
+    >
+      <span className="relative z-10">{event}</span>
+      <span
+        className="absolute bottom-0 left-0 border-b-[20px] md:border-b-[26px] border-primary2 z-0"
+        style={{
+          width: `${eventRefs.current[index]?.offsetWidth}px`,
+          transition: "width 0.3s ease-in-out",
+        }}
+      ></span>
+    </h2>
+  );
+
   if (windowSize.width < 768) {
     return (
       <div className="flex flex-col space-y-8 p-8">
@@ -150,8 +171,11 @@ const PortfolioFiles = () => {
             {/* Content Section */}
             <div className="p-4 rounded-lg shadow-lg bg-white">
               <div className="flex items-center space-x-4">
-                <FaCalendarAlt className="text-2xl" />
-                <h2 className="text-xl font-bold">{item.event}</h2>
+                <div className="relative">
+                  <FaCalendarAlt className="text-4xl text-primary2" />
+                  <FaCalendarAlt className="absolute -top-1 left-1 text-4xl text-black" />
+                </div>
+                <EventTitle event={item.event} index={index} />
               </div>
               <p className="mt-4">{item.description}</p>
               <div className="mt-4 p-4 bg-gray-100 rounded-lg shadow-inner">
@@ -161,9 +185,6 @@ const PortfolioFiles = () => {
                     <li key={detailIndex}>{detail}</li>
                   ))}
                 </ul>
-                {/* <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
-                  Reach out
-                </Button> */}
               </div>
             </div>
           </div>
@@ -196,11 +217,11 @@ const PortfolioFiles = () => {
         {portfolioData.map((item, index) => (
           <div key={index} className="p-4 rounded-lg bg-white">
             <div className="flex items-center space-x-4">
-              <FaCalendarAlt className="text-2xl" />
-              <h2 className="relative text-primary1 text-xl font-bold mb-2">
-                <span className="relative z-10">{item.event}</span>
-                <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
-              </h2>
+              <div className="relative">
+                <FaCalendarAlt className="text-4xl text-primary2" />
+                <FaCalendarAlt className="absolute -top-1 left-1 text-4xl text-black" />
+              </div>
+              <EventTitle event={item.event} index={index} />
             </div>
             <p className="mt-4">{item.description}</p>
             <div className="mt-4 p-4 shadow-lg rounded-lg">
@@ -210,9 +231,6 @@ const PortfolioFiles = () => {
                   <li key={detailIndex}>{detail}</li>
                 ))}
               </ul>
-              {/* <Button className="mt-4 text-white w-40 h-15 bg-[#BE9553] hover:bg-[#3E2300]">
-                Contact Us
-              </Button> */}
             </div>
           </div>
         ))}

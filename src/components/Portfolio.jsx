@@ -1,12 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import PortfolioFiles from "./PortfolioFiles";
 import Modal from "./Modal";
 import Button from "./Button";
 import ContactUs from "./ContactUs"; // Ensure to import ContactUs component
 
+// Define keyframes for the border animation
+const slideIn = keyframes`
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 10rem; /* w-52 */
+  }
+`;
+
+// Styled component for the animated border
+const AnimatedBorder = styled.span`
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  height: 25px; /* border-b-[28px] */
+  background-color: #9f2c55; /* border-primary2 */
+  z-index: 0;
+  animation: ${slideIn} 8s forwards;
+  animation-play-state: ${(props) => (props.inView ? "running" : "paused")};
+`;
+
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -32,12 +76,13 @@ const Portfolio = () => {
       <div
         className="flex flex-col lg:flex-row space-y-8 md:mb-20 lg:space-y-0 lg:space-x-8 p-8"
         id="portfolio"
+        ref={sectionRef}
       >
         {/* Left Section */}
         <div className="flex-1 space-y-6">
-          <h1 className="relative text-4xl text-primary1 font-bold mb-2">
+          <h1 className="relative text-4xl text-black font-bold mb-2">
             <span className="relative z-10">Portfolio.</span>
-            <span className="absolute bottom-1 left-0 w-28 border-b-8 border-primary2 z-0"></span>
+            <AnimatedBorder inView={inView} />
           </h1>
 
           <h2 className="text-2xl font-semibold">Showcase of Our Work</h2>
