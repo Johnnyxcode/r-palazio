@@ -22,9 +22,9 @@ const Hero = () => {
       id="home"
     >
       {isLoading && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-30 bg-primary2">
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-30 bg-white">
           {/* Preloader Content */}
-          <div className="text-white text-2xl font-bold">Loading...</div>
+          <div className="text-black text-2xl font-bold">Loading...</div>
         </div>
       )}
       <Nav />
