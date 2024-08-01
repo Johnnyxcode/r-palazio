@@ -144,7 +144,7 @@ const PortfolioFiles = () => {
     >
       <span className="relative z-10">{event}</span>
       <span
-        className="absolute bottom-0 left-0 border-b-[20px] md:border-b-[26px] border-primary2 z-0"
+        className="absolute bottom-0 left-0 border-b-[20px] md:border-b-[26px] border-primary2 z-0 animate-borderAnimation"
         style={{
           width: `${eventRefs.current[index]?.offsetWidth}px`,
           transition: "width 0.3s ease-in-out",
@@ -171,7 +171,7 @@ const PortfolioFiles = () => {
             {/* Content Section */}
             <div className="p-4 rounded-lg shadow-lg bg-white">
               <div className="flex items-center space-x-4">
-                <div className="relative">
+                <div className="relative animate-iconAnimation">
                   <FaCalendarAlt className="text-4xl text-primary2" />
                   <FaCalendarAlt className="absolute -top-1 left-1 text-4xl text-black" />
                 </div>
@@ -217,7 +217,7 @@ const PortfolioFiles = () => {
         {portfolioData.map((item, index) => (
           <div key={index} className="p-4 rounded-lg bg-white">
             <div className="flex items-center space-x-4">
-              <div className="relative">
+              <div className="relative animate-iconAnimation">
                 <FaCalendarAlt className="text-4xl text-primary2" />
                 <FaCalendarAlt className="absolute -top-1 left-1 text-4xl text-black" />
               </div>

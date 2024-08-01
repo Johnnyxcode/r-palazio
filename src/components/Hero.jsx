@@ -1,12 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true); // State to manage loading
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.6; // Set playback speed (0.6 is adjusted rate)
+      videoRef.current.onloadeddata = () => {
+        setIsLoading(false); // Video has loaded, hide preloader
+      };
     }
   }, []);
 
@@ -17,11 +21,19 @@ const Hero = () => {
       className="relative bg-primary2 h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
       id="home"
     >
+      {isLoading && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-30 bg-primary2">
+          {/* Preloader Content */}
+          <div className="text-white text-2xl font-bold">Loading...</div>
+        </div>
+      )}
       <Nav />
       {/* Background Video */}
       <video
         ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
         autoPlay
         loop
         muted
@@ -31,10 +43,18 @@ const Hero = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black z-10"></div>
+      <div
+        className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black z-10 transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      ></div>
 
       {/* Content */}
-      <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white">
+      <div
+        className={`absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <h1 className="text-2xl font-extrabold whitespace-nowrap md:text-6xl">
           Creating Memorable Experiences
         </h1>
@@ -45,7 +65,11 @@ const Hero = () => {
       </div>
 
       {/* Rotating Text */}
-      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20">
+      <div
+        className={`absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <div className="relative w-40 h-40 flex items-center justify-center">
           <div className="absolute w-full h-full rounded-full animate-spin-slow">
             <div className="text-circle">

@@ -97,3 +97,31 @@ body {
   font-weight: bold;
   color: white;
 }
+
+@keyframes iconAnimation {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-iconAnimation {
+  animation: iconAnimation 1.9s ease-in-out forwards;
+}
+
+.animate-borderAnimation {
+  animation: borderAnimation 1.9s ease-in-out forwards;
+}
