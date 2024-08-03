@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
+import PreLoader from "./PreLoader";
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -21,12 +22,7 @@ const Hero = () => {
       className="relative bg-primary2 h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
       id="home"
     >
-      {isLoading && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-30 bg-white">
-          {/* Preloader Content */}
-          <div className="text-black text-2xl font-bold">Loading...</div>
-        </div>
-      )}
+      <PreLoader isLoading={isLoading} /> {/* Use the Preloader component */}
       <Nav />
       {/* Background Video */}
       <video
@@ -41,14 +37,12 @@ const Hero = () => {
         <source src="./video/Event.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
       {/* Overlay */}
       <div
         className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black z-10 transition-opacity duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       ></div>
-
       {/* Content */}
       <div
         className={`absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white transition-opacity duration-500 ${
@@ -63,7 +57,6 @@ const Hero = () => {
           attention to detail, leaving a lasting impression.
         </p>
       </div>
-
       {/* Rotating Text */}
       <div
         className={`absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-500 ${

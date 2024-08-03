@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const PreLoader = () => {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-      <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-primary2"></div>
+const PreLoader = ({ isLoading }) => {
+  useEffect(() => {
+    // Disable scrolling and interactions when the preloader is active
+    if (isLoading) {
+      document.body.style.position = "fixed";
+      document.body.style.top = "0";
+      document.body.style.left = "0";
+      document.body.style.width = "100%";
+      document.body.style.height = "100%";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.width = "";
+      document.body.style.height = "";
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.width = "";
+      document.body.style.height = "";
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
+  return isLoading ? (
+    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-white pointer-events-none">
+      {/* Preloader Content */}
+      <div className="text-black text-2xl font-bold">Loading...</div>
     </div>
-  );
+  ) : null;
 };
 
 export default PreLoader;
