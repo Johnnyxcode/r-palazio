@@ -5,12 +5,20 @@ import PreLoader from "./PreLoader";
 const Hero = () => {
   const videoRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
+  const [videoError, setVideoError] = useState(false); // State to manage video loading errors
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.6; // Set playback speed (0.6 is adjusted rate)
+
+      // Set up the event handlers for video loading and errors
       videoRef.current.onloadeddata = () => {
         setIsLoading(false); // Video has loaded, hide preloader
+      };
+
+      videoRef.current.onerror = () => {
+        setVideoError(true); // Video failed to load, show background color
+        setIsLoading(false); // Hide preloader
       };
     }
   }, []);
@@ -19,34 +27,38 @@ const Hero = () => {
 
   return (
     <div
-      className="relative bg-primary2 h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden"
+      className={`relative ${
+        videoError ? "bg-primary2" : "bg-transparent"
+      } h-[780px] md:rounded-b-3xl md:h-screen overflow-hidden`}
       id="home"
     >
       <PreLoader isLoading={isLoading} /> {/* Use the Preloader component */}
       <Nav />
       {/* Background Video */}
-      <video
-        ref={videoRef}
-        className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        }`}
-        autoPlay
-        loop
-        muted
-      >
-        <source src="./video/Event.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {!videoError && (
+        <video
+          ref={videoRef}
+          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
+            isLoading ? "opacity-0" : "opacity-100"
+          }`}
+          autoPlay
+          loop
+          muted
+        >
+          <source src="./video/Event.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
       {/* Overlay */}
       <div
         className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black z-10 transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
+          isLoading || videoError ? "opacity-0" : "opacity-100"
         }`}
       ></div>
       {/* Content */}
       <div
         className={`absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20 text-white transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
+          isLoading || videoError ? "opacity-0" : "opacity-100"
         }`}
       >
         <h1 className="text-2xl font-extrabold whitespace-nowrap md:text-6xl">
@@ -60,7 +72,7 @@ const Hero = () => {
       {/* Rotating Text */}
       <div
         className={`absolute -bottom-20 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
+          isLoading || videoError ? "opacity-0" : "opacity-100"
         }`}
       >
         <div className="relative w-40 h-40 flex items-center justify-center">

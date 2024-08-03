@@ -33,7 +33,7 @@ const PreLoader = ({ isLoading }) => {
   return isLoading ? (
     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-white pointer-events-none">
       {/* Preloader Content */}
-      <div className="text-black text-2xl font-bold">Loading...</div>
+      <div className="text-black text-3xl font-bold">Loading...</div>
     </div>
   ) : null;
 };
